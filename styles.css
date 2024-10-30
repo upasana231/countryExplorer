@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f3f8fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 1.5rem auto;
+}
+
+#search {
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+#search:focus {
+    border: 2px solid #3498db;
+    outline: none;
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.959);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: medium;
+    display: none;
+    z-index: 1000;
+    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color:#333
+}
+
+.suggestion-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.suggestion-item:hover {
+    background: #c5e0fa;
+}
+
+#countries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.country-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.country-card img {
+    width: 100px; 
+    height: 60px; 
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.country-card:hover img {
+    transform: scale(1.08);
+}
+
+.btn-load-more {
+    background-color: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    margin: 2rem auto;
+    transition: background-color 0.3s ease;
+}
+
+.btn-load-more:hover {
+    background-color: #2980b9;
+}
+
+
+#favorites {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    width: 250px;
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#favorites h2 {
+    font-size: 1.2rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.favorite-item img {
+    width: 25px;
+    height: 15px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.favorite-item:last-child {
+    border-bottom: none;
+}
+
+
+#favorites.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+    display: none;
+}
+
+.details {
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem auto;
+    width: 85%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.details h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: #3498db;
+}
+
+.details p {
+    margin: 0.75rem 0;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    #countries {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
