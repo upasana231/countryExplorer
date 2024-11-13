@@ -8,19 +8,40 @@
 </head>
 <body>
     <header>
-        <h1>🌎 Country Explorer</h1>
-        <div class="search-wrapper">
-            <input type="text" id="search" placeholder="Search for a country...">
-            <div id="suggestions" class="hidden"></div>
+        <div class="header-container">
+            <h1>🌎 Country Explorer</h1>
+            <div class="search-wrapper">
+                <input type="text" id="search" placeholder="Search for a country...">
+                <div id="suggestions" class="suggestions-list hidden"></div>
+            </div>
+            <div class="filter-wrapper">
+                <label for="regionSelect">Region:</label>
+                <select id="regionSelect">
+                    <option value="">All Regions</option>
+                </select>
+                <label for="languageSelect">Language:</label>
+                <select id="languageSelect">
+                    <option value="">All Languages</option>
+                </select>
+            </div>
         </div>
-        <button id="toggleFavorites">Show Favorites</button>
     </header>
+
     <main>
+        <div id="overlay"></div>
+        <div id="countryDetailsPopup"></div>
         <div id="countries"></div>
         <button id="loadMore" class="btn-load-more">Show More Countries</button>
     </main>
+    
+    <aside id="favorites">
+        <h2>Favorites</h2>
+        <div id="favoritesList"></div>
+        <p id="favoritesError" class="hidden">You can only add up to 5 favorites.</p>
+    </aside>
 
-    <aside id="favorites" class="hidden"></aside>
+    <div id="countryDetails" class="hidden"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
