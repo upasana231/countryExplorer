@@ -89,6 +89,7 @@ select {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     width: calc(20.333% - 1rem); 
+    margin-right: auto;
 }
 
 .country-card:hover {
