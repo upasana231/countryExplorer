@@ -39,8 +39,6 @@ This project is a **responsive website** that displays **country cards**. It sho
    - This section is always visible on mobile devices for ease of use.
 ## 2. Usage Instructions
 
-## 2. Usage Instructions
-
 ### Country Cards Layout:
 - The country cards are displayed in a **grid layout**. Depending on the screen size, the number of cards per row adjusts automatically:
   - On **large screens**: 3 cards per row.
