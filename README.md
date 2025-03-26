@@ -68,7 +68,7 @@ This project is a **responsive website** that displays **country cards**. It sho
 - **HTML**: The structure and layout of the web pages.
 - **CSS**: Styling and responsiveness of the layout using media queries.
 - **JavaScript** (optional): For dynamic content like adding/removing items from the Favorites Section.
-- **Country Layer API**: Fetches live country data (used with fallback to a JSON file).
+- **RestCountry API**: Fetches live country data (used with fallback to a JSON file).
 
 ---
 
